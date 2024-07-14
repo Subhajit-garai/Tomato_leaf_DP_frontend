@@ -5,26 +5,28 @@ import styled from "styled-components";
 
 
 export const UploadingFiles = ({ filename, size, progress ,rate}) => {
-    const { b1, p2, p3, p4, p5, r1 } = useSelector((state) => state.color)
-    const { elementColor } = useSelector((state) => state.appcustomizer)
+    const { p1 ,p2,p3,p4,b1,r1,logo2 ,logo,white,lt_bg,p5} = useSelector((state) => state.color)
 
     const dispatch = useDispatch()
+    if(rate === "NaN"){
+        rate = 0;
+    }
 
     return (
-        <Wrapper>
+        <Wrapper style={{ background: p2,}}>
             <FcImageFile style={{ fontSize: "4rem" }} />
-            <div className="uploadingcont">
+            <div className="uploadingcont" >
                 <div className="uploadedinfo">
                     <div className="processbarCont">
-                        <div className="processbar" style={{ background: elementColor.progressbarColor, width: `${progress}%` }} ></div>
+                        <div className="processbar" style={{ background: logo, width: `${progress}%` }} ></div>
                     </div>
                     <span className="infospan">
                      <p style={{ fontSize: "14px", color: b1, fontWeight: 500 }}>{filename} uploading....</p>
-                     <p style={{ fontSize: "14px", color: b1, fontWeight: 500 }}>{rate} mb/s</p>
+                     <p style={{ fontSize: "14px", color: b1, fontWeight: 500 }}><span style={{color: r1,}}>{rate}</span> mb/s</p>
                     </span>
 
                 </div>
-                <p style={{ fontSize: "14px", color: b1, fontWeight: 700 }}>{progress}%</p>
+                <p style={{ fontSize: "14px", color: logo, fontWeight: 700 }}>{progress}%</p>
             </div>
 
 
@@ -41,7 +43,7 @@ const Wrapper = styled.section`
     display: flex;
     align-items: center;
     padding: 0 .5rem;    
-    gap: 1rem;
+    gap: .1rem;
 
  &>.uploadingcont{
     width: 100%;
@@ -53,7 +55,7 @@ const Wrapper = styled.section`
  .uploadingcont .uploadedinfo{
     display: flex;
     flex-direction: column;
-    width: 80%;
+    /* width: 80%; */
 }
 
 .uploadedinfo .processbarCont
@@ -71,7 +73,7 @@ const Wrapper = styled.section`
 }
 .uploadedinfo .infospan{
     display: flex;
-    gap: 3rem ;
+    gap: 1rem ;
 }
 
 `

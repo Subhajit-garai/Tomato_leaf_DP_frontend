@@ -2,6 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 export  const GlobalStyle =createGlobalStyle`
 
+
 *{
     margin: 0;
     padding: 0;
@@ -18,6 +19,9 @@ html{
     width: 100vw;
 }
 
+.title{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 #root{
     height: 100vh;
@@ -102,6 +106,14 @@ color: green;
 color: red;
 }
 .Cblue{
-    color: ${({theme})=>theme.colors.demo};
+    color: ${({theme})=>theme.colors.hover1};
 }
+
+
+/* Set the width and height of the scrollbar */
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
 `

@@ -6,20 +6,19 @@ import styled from "styled-components";
 
 
 export const UploadedFiles = ({ filename, size }) => {
-  const { b1, p2, p3, p4 } = useSelector((state) => state.color)
-  const { mainColor, imageArea } = useSelector((state) => state.appcustomizer)
+  const { p1 ,p2,p3,p4,b1,r1,logo2 ,logo,white,lt_bg,p5} = useSelector((state) => state.color)
 
   const dispatch = useDispatch()
 
   return (
-    <Wrapper>
-      <FcImageFile style={{ fontSize: "4rem", color: p2 }} />
+    <Wrapper style={{ background: p2,}}>
+      <FcImageFile style={{ fontSize: "4rem" }} />
       <div className="uploadedcont">
         <div className="uploadedinfo">
           <p style={{ fontSize: "14px", color: b1, fontWeight: 500 }}>{filename} uploaded</p>
-          <p style={{ fontSize: "10px", color: p2, fontWeight: 500 }}>{size} mb</p>
+          <p style={{ fontSize: "10px", color: b1, fontWeight: 500 }}>{size} mb</p>
         </div>
-        <FaCheck style={{ fontSize: "1.8rem", color: mainColor.primary1 }} onClick={() => { dispatch(AppColorSet(["imageArea", "textColor", "green"])) }} />
+        <FaCheck style={{ fontSize: "1.8rem", color: logo }} onClick={() => { }} />  
       </div>
 
     </Wrapper>
@@ -29,27 +28,26 @@ export const UploadedFiles = ({ filename, size }) => {
 
 const Wrapper = styled.section`
     height: inherit;
-    min-height: 5rem;
+    min-height: 6rem;
     border-radius: inherit;
-    background-color: aquamarine;
     display: flex;
     align-items: center;
     padding: 0 .5rem;    
     gap: 1rem;
- &>.uploadedcont,
- &>.uploadingcont{
+ &>.uploadedcont{
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-right: .5rem;
 }
- .uploadedcont .uploadedinfo,
- .uploadingcont .uploadedinfo{
-    display: flex;
+
+.uploadedcont .uploadedinfo{
+  display: flex;
     flex-direction: column;
     width: 80%;
 }
+
 
 
 `

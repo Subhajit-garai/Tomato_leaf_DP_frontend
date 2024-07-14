@@ -5,17 +5,21 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Input1 from "../../Components/elements/Input1.jsx"
 import Button1 from "../../Components/elements/buttons/Button1.jsx"
+import { useSelector } from 'react-redux';
 
-let registerUrl = `${import.meta.env.REACT_APP_SURVER_DOMAIN}/api/v1/signup`
+let registerUrl = "/api/v1/users/signup"
+let signupimage ="./assets/images1/3.png"
+
 
 const Signup = () => {
     const navigate = useNavigate()
+    const {logo} = useSelector((state) => state.color)
 
     let inltialstate = {
-        Name: "",
-        Phone: "",
-        Email: "",
-        Password: "",
+        name: "",
+        phone: "",
+        email: "",
+        password: "",
     }
 
     const [user, setuser] = useState(inltialstate);
@@ -49,31 +53,31 @@ const Signup = () => {
             <div className="mainCont">
                 <form className='grid grid-2-c' action="#" onSubmit={(e) => { e.preventDefault(); veryfingUser() }}>
                     <div className="formimage">
-                        <img src="./images/signup.svg" width="350rem" height="350rem" alt="signUp" />
+                        <img src={signupimage} width="280rem" height="300rem" alt="signUp" />
                     </div>
 
                     <div className="inputFilds">
                         <div className="username inputeContener">
                             <label htmlFor="username">Name:</label>
-                            <Input1 type="text" value={user.Name} height="4rem" width="70%" placeholder="Enter Name" name='Name' onChange={(e) => { hendleInpute(e) }} />
+                            <Input1 type="text" value={user.name} height="4rem" width="70%" placeholder="Enter Name" name='name' onChange={(e) => { hendleInpute(e) }} />
                         </div>
                         <div className="email inputeContener">
                             <label htmlFor="email">Email:</label>
-                            <Input1 type="email" value={user.Email} height="4rem" width="70%" placeholder="Enter Email" name='Email' onChange={(e) => { hendleInpute(e) }} />
+                            <Input1 type="email" value={user.email} height="4rem" width="70%" placeholder="Enter Email" name='email' onChange={(e) => { hendleInpute(e) }} />
 
                         </div>
                         <div className="password inputeContener">
                             <label htmlFor="password">Password:</label>
-                            <Input1 type="text" value={user.Password} height="4rem" width="70%" placeholder="Enter Password" name='Password' onChange={(e) => { hendleInpute(e) }} />
+                            <Input1 type="text" value={user.password} height="4rem" width="70%" placeholder="Enter Password" name='password' onChange={(e) => { hendleInpute(e) }} />
 
                         </div>
                         <div className="phone inputeContener">
                             <label htmlFor="phone">Phone:</label>
-                            <Input1 type="number" value={user.Phone} height="4rem" width="70%" placeholder="Enter Phone" name='Phone' onChange={(e) => { hendleInpute(e) }} />
+                            <Input1 type="number" value={user.phone} height="4rem" width="70%" placeholder="Enter Phone" name='phone' onChange={(e) => { hendleInpute(e) }} />
                         </div>
                         <div className="actionBtn" >
-                            <Button1 type="button" StyleData={{ h: "4rem", w: "40%" }} value="Cancle" />
-                            <Button1 type="Submit" StyleData={{ h: "4rem", w: "40%" }} value="Submit" />
+                            <Button1 type="button" StyleData={{ height: "4rem", width: "40%" ,bg:`${logo}`}} value="Cancle" />
+                            <Button1 type="Submit" StyleData={{ height: "4rem", width: "40%" ,bg:`${logo}`}} value="Submit" />
 
                         </div>
                     </div>
@@ -125,7 +129,7 @@ const Wrapper = styled.section`
 
                     label{
                         width: fit-content;
-                        color:  ${({ theme }) => theme.colors.demo};
+                        color:  ${({ theme }) => theme.colors.hover1};
                         font-size: large;
                         text-align:left ;
                     }

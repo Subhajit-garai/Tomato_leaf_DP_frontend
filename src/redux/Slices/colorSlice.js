@@ -5,9 +5,14 @@ const initialState= {
     p2:"#EEF7FF",
     p3:"#CDE8E5",
     p4:"rgb(132, 245, 245)",
-    p5:"aqua",
     r1:"red",
     b1:"#3688ff",
+
+    logo:"#03f8f3",
+    logo2:"#00d1cd",
+    lt_bg:"#75f0ed",
+    white:"#fff",
+    bg :"rgb(249 249 255)",
 
 }
 

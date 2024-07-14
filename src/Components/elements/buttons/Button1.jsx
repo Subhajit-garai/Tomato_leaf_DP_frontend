@@ -1,6 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
+// example
+{/* <Button1 type="button" StyleData={{ height: "4rem", width: "8%" }} value={<IoIosEyeOff className='eye' />} onClick={(e) => { setispreview(!ispreview) }} /> */}
+
+
 const Button1 = (props) => {
     let {type,value,onClick,StyleData,CN}=props
 

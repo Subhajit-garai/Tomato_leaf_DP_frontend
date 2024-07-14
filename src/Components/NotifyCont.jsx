@@ -54,7 +54,7 @@ const Wrapper = styled.div`
         border-radius: 1rem;
         width: fit-content;
         background-color: ${({ theme }) => theme.colors.white};
-        color: ${({ theme }) => theme.colors.demo};
+        color: ${({ theme }) => theme.colors.hover1};
         padding: 1rem;
         align-items: center;
         justify-content: center;
@@ -85,7 +85,7 @@ const Wrapper = styled.div`
         border-radius: 1rem;
         width: fit-content;
         background-color: ${({ theme }) => theme.colors.white};
-        color: ${({ theme }) => theme.colors.demo};
+        color: ${({ theme }) => theme.colors.hover1};
         padding: 1rem;
         p{
             font-size: 14px;

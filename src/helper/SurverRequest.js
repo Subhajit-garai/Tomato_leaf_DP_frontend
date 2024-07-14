@@ -7,7 +7,7 @@ export const SurverRequest = async (Method, url, data) => {
         credentials: 'include',
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": `${process.env.REACT_APP_SURVER_DOMAIN}`,
+          "Access-Control-Allow-Origin": `/api/v1/`,
         },
       })
      
@@ -25,7 +25,7 @@ export const SurverRequest = async (Method, url, data) => {
       credentials: 'include',
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": `${process.env.REACT_APP_SURVER_DOMAIN}`,
+        "Access-Control-Allow-Origin": `/api/v1/`,
 
       },
       body: JSON.stringify(data),

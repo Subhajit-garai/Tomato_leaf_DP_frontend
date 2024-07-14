@@ -260,7 +260,7 @@ const ShowCartProduct = styled.div`
             display: flex;
             gap: 1rem;
             hr{
-                background-color: ${({ theme }) => theme.colors.demo};
+                background-color: ${({ theme }) => theme.colors.hover1};
                 width: .3rem;
             }
             .img{

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import ImageInpute from "../../Components/ImageInputeComponent/ImageInpute.jsx"
 const PredctionPage = () => {
   return (
-    <Wrapper className='predictionPage'>
+    <Wrapper className='predictionPage '>
         <ImageInpute/>
     </Wrapper>
   )
@@ -15,7 +15,7 @@ align-items: center;
 justify-content: center;
 padding: 1rem;
 width: 100%;
-height: 100%;
+min-height: 100vh;
 `
 
 export default PredctionPage

@@ -8,12 +8,15 @@ import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';
 
 
-let loginUrl = `${import.meta.env.REACT_APP_SURVER_DOMAIN}/api/v1/login`
+let loginUrl = "/api/v1/users/login"
+let loginimage ="./assets/images1/2.png"
 
 
 const LogIn = () => {
     const navigate = useNavigate()
      let {isLogin}  = useSelector((state)=> state.user.userData)
+     const {logo} = useSelector((state) => state.color)
+
     //  if user logged in then we need to navigate to Home page
     useEffect(()=>{        
      if(isLogin){
@@ -23,8 +26,8 @@ const LogIn = () => {
      
    
     let inltialstate = {
-        Email: "",
-        Password: "",
+        email: "",
+        password: "",
     }
 
     const [user, setuser] = useState(inltialstate);
@@ -55,28 +58,27 @@ const LogIn = () => {
     }
     return (
         <Wrapper>
-            <div className="circle"></div>
 
             <div className="mainCont">
                 <form className='grid grid-2-c' onSubmit={(e) => { e.preventDefault(); veryfingUser() }}>
                     <div className="formimage">
-                        <img src="./images/login.svg" alt="signUp" />
+                        <img src={loginimage} alt="signUp" />
                     </div>
 
                     <div className="inputFilds">
                         <div className="email inputeContener">
                             <label htmlFor="email">Email:</label>
-                            <Input1 type="email" value={user.Email} height="4rem" width="70%" placeholder="Enter Email" name='Email' onChange={(e) => { hendleInpute(e) }} />
+                            <Input1 type="email" value={user.email} height="4rem" width="70%" placeholder="Enter Email" name='email' onChange={(e) => { hendleInpute(e) }} />
 
                         </div>
                         <div className="password inputeContener">
                             <label htmlFor="password">Password:</label>
-                            <Input1 type="text" value={user.Password} height="4rem" width="70%" placeholder="Enter Password" name='Password' onChange={(e) => { hendleInpute(e) }} />
+                            <Input1 type="text" value={user.password} height="4rem" width="70%" placeholder="Enter Password" name='password' onChange={(e) => { hendleInpute(e) }} />
 
                         </div>
                         <div className="actionBtn" >
-                            <Button1 type="button" StyleData={{ h: "4rem", w: "40%" }} value="Cancle" />
-                            <Button1 type="Submit" StyleData={{ h: "4rem", w: "40%" }} value="Submit" />
+                            <Button1 type="button" StyleData={{ height: "4rem", width: "40%" ,bg:`${logo}`}} value="Cancle" />
+                            <Button1 type="Submit" StyleData={{ height: "4rem", width: "40%" ,bg:`${logo}`}} value="Submit" />
 
                         </div>
                     </div>
@@ -87,7 +89,7 @@ const LogIn = () => {
     )
 }
 const Wrapper = styled.section`
-         min-height:85vh;
+         min-height:90vh;
          width:100vw;
          background-color: ${({ theme }) => theme.colors.bg};
          margin-top: 2rem;
@@ -148,7 +150,7 @@ const Wrapper = styled.section`
 
                     label{
                         width: fit-content;
-                        color:  ${({ theme }) => theme.colors.demo};
+                        color:  ${({ theme }) => theme.colors.hover1};
                         font-size: large;
                         text-align:left ;
                     }

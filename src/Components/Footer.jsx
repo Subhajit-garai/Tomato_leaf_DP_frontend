@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import {NavLink} from"react-router-dom"
+import { NavLink } from "react-router-dom"
 
 const Footer = () => {
 
- 
+
 
   return (
     <Footer1>
@@ -15,25 +15,22 @@ const Footer = () => {
           <p>Your Needs</p>
         </div>
 
-      
-      <div className="footer-info grid grid-3-c">
-        <div className="cont">
-          <h5>LINKS</h5>
-          <p> <NavLink to={"/"}>Home</NavLink> </p>
-          <p> <NavLink to={"/product"}>products</NavLink></p>
-          <p> <NavLink to={"/about"}>About</NavLink></p>
-          <p><NavLink to={"/contuct"}>Contuct</NavLink></p>
-          <p><NavLink to={"/cart"}>Cart</NavLink></p>
+
+        <div className="footer-info">
+          <div className="cont">
+            <h5>LINKS</h5>
+            <p> <NavLink to={"/"}>Home</NavLink> </p>
+            <p> <NavLink to={"/predction"}>Predction</NavLink></p>
+            <p> <NavLink to={"/diseaseinfo"}>Diseaseinfo</NavLink></p>
+            <p><NavLink to={"/history"}>History</NavLink></p>
+          </div>
+
+          <div className="cont">
+            <h5>DEVELOP BY</h5>
+            <a href="https://www.linkedin.com/in/subhajit-garai-9a6a26248/"><p>SUBHAJIT GARAI</p></a>
+
+          </div>
         </div>
-        <div className="cont">
-          <h5>MORE PRODUCTS </h5>
-          <p>Visit in Shop(MANKANALI)</p>
-        </div>
-        <div className="cont">
-          <h5>OWNER</h5>
-          <p>SUBHAJIT GARAI</p>
-        </div>
-      </div>
       </div>
 
 
@@ -46,9 +43,10 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+margin-top: 1rem;
 
 h5{   
-     color: ${({theme})=>theme.colors.demo};
+     color: ${({ theme }) => theme.colors.hover1};
     }
 
 .floting-cont{
@@ -86,31 +84,38 @@ gap: 2rem;
 
   h3{
     font-weight: 700;
-    color: ${({theme})=>theme.colors.demo};
+    color: ${({ theme }) => theme.colors.hover1};
   }
   
 }
+
 .footer-info {
-  justify-items: center;
-  
+ display: flex;
+ justify-content: space-around;
+ padding: 0rem 15rem;
 }
 
+
+
 }
-@media  (max-width:${({theme})=>theme.media.t}){
+@media  (max-width:${({ theme }) => theme.media.t}){
   
 
 }
-@media  (max-width:${({theme})=>theme.media.m}){
+@media  (max-width:${({ theme }) => theme.media.m}){
+
+.footer-cont{
  
+.footer-info {
+ justify-content: space-between;
 
- .footer-info{
-   width: 95vw;
-   .cont{
-    p,h5{
-      font-size: 14px;  
-    }
-   }
- }
+ display: flex;
+ padding: 0rem 2rem;
+
+}
+
+}
+
 }
 
 `

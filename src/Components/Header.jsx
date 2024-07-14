@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Nav } from './NavBar';
+import { Nav } from './NavBar.jsx';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
@@ -8,15 +8,16 @@ import { NavLink } from 'react-router-dom';
 
 
 const Header = () => {
-    const LogoUrl = "./logo/logo.png";
+    const LogoUrl = "./logo/svg/logo-no-background.svg";
+    const LogoUrl1 = "./logo/Logo-fav-icon.png";
  
     return (
         <Header1>
             <div className="logo">
                 <picture>
-                    <NavLink to={"/"}> <img src={LogoUrl} alt="logo here" /></NavLink>
+                    <NavLink to={"/"}> <img src={LogoUrl1} alt="logo here" /></NavLink>
                 </picture>
-                <p>IMAGE AI</p>
+                <p style={{fontFamily:'Segoe UI'}}>LeafCare AI</p>
             </div>
             
             <Nav/>

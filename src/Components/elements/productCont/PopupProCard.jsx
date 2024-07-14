@@ -141,7 +141,7 @@ border-radius: 1rem;
             /* background-color: green; */
             p{
                 padding: 1rem;
-                color:${({ theme }) => theme.colors.demo} ;
+                color:${({ theme }) => theme.colors.hover1} ;
                 font-weight: 700;
             }
         }
@@ -188,7 +188,7 @@ border-radius: 1rem;
         font-size: 18px; 
         font-weight :600 ;
         span{
-            color:${({ theme }) => theme.colors.demo}
+            color:${({ theme }) => theme.colors.hover1}
         }
         }
     }
@@ -224,7 +224,7 @@ border-radius: 1rem;
             p{
                 font-weight: 600;
                 span{
-                    color:${({ theme }) => theme.colors.demo};
+                    color:${({ theme }) => theme.colors.hover1};
                     font-weight: 600;
                 }
             }

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LogIn from './Pages/DeafultPage/LogIn';
 import HomePage from './Pages/DeafultPage/HomePage';
@@ -10,13 +10,21 @@ import { GlobalStyle } from './GlobalStyle.jsx';
 
 import PredctionPage from './Pages/DeafultPage/PredctionPage.jsx';
 import DataHistoryPage from './Pages/ServicePage/DataHistory/DataHistoryPage.jsx';
+import DiseaseinfoPage from './Pages/ServicePage/Diseaseinfo/DiseaseinfoPage.jsx';
+import { useDispatch } from 'react-redux';
+
+import { getUserData } from './helper/action/AsyncAction.js';
+import Footer from './Components/Footer.jsx';
+
+import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 
 
 const theme = {
   colors: {
     heading: "rgb(24 24 29)",
-    demo: "#4477CE",
+    hover1: "#03f8f3",
     purple: "#7743DB",
     misty: "#F875AA",
     text: "rgb(24 24 29)",
@@ -37,6 +45,10 @@ const theme = {
 }
 
 function App() {
+  let dispatch = useDispatch()
+  useEffect(() => {
+    getUserData(dispatch)
+  }, [])
 
 
   return (
@@ -52,8 +64,13 @@ function App() {
         {/* <Route path="/logout" element={<Home />} /> */}
         <Route path="/predction" element={<PredctionPage />} />
         <Route path="/history" element={<DataHistoryPage/>} />
+        <Route path="//diseaseinfo" element={<DiseaseinfoPage/>} />
       </Routes>
+      <Footer/>
      </BrowserRouter>
+     <ToastContainer
+          autoClose={2000}
+        />
      </ThemeProvider>
     </>
   )

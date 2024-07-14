@@ -154,7 +154,7 @@ align-items: center;
             /* background-color: green; */
             p{
                 padding: 1rem;
-                color:${({ theme }) => theme.colors.demo} ;
+                color:${({ theme }) => theme.colors.hover1} ;
                 font-weight: 700;
             }
         }
