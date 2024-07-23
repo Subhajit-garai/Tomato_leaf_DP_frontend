@@ -6,12 +6,15 @@ const initialState = {
     history: [],
     filteredhistory: [],
     diseaseinfos: [],
+    isloading: false,
 }
 
 const appSlice = createSlice({
     name: 'app',
     initialState,
     reducers: {
+
+
         filterupdateWithtime: (state, action) =>{
             state.filteredhistory = [];
             let date = new Date(Date.now())
@@ -63,9 +66,12 @@ const appSlice = createSlice({
 
         updatealldiseaseinfo: (state, action) => {
             state.diseaseinfos = action.payload.data;
-        }
+        },
+        setloading: (state, action) => {
+            state.isloading = action.payload;
+        },
     }
 })
 
-export const { updateHistory, updatealldiseaseinfo, updatefilteredhistory ,filterupdateWithtime} = appSlice.actions;
+export const { updateHistory, updatealldiseaseinfo, updatefilteredhistory ,filterupdateWithtime,setloading} = appSlice.actions;
 export default appSlice.reducer

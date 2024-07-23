@@ -9,6 +9,12 @@ import { UploadedFiles } from "./UploadedFiles.jsx";
 import { UploadingFiles } from "./UploadingFiles.jsx";
 import styled from "styled-components";
 
+//loader
+import {setloading} from "../../redux/Slices/appSlice.js"
+
+// toaster
+import {toast} from "react-toastify"
+
 
 const ImageInpute = () => {
 
@@ -56,8 +62,15 @@ const ImageInpute = () => {
   }
 
   const prediction = () => {
+    dispatch(setloading(true))
     let url = "/api/v1/models/predict"
-    let res = axios.get(url).then((response) => { console.log(response.data) })
+    let res = axios.get(url).then((response) => { console.log(response.data) ; 
+      toast.success(response.data.message)
+      dispatch(setloading(false))})
+    .catch((err)=>{ 
+      toast.error(err.response.data.message)
+       dispatch(setloading(false))
+    })
   }
 
   useEffect(() => {

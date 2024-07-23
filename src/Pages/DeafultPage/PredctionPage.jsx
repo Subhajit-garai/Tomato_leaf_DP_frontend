@@ -1,10 +1,26 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import ImageInpute from "../../Components/ImageInputeComponent/ImageInpute.jsx"
+import { useDispatch, useSelector } from 'react-redux'
+import Loader from '../../Components/elements/loader/Loader.jsx'
 const PredctionPage = () => {
+
+  const {  isloading } = useSelector((state) => state.app)
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+
+  }, [isloading])
   return (
     <Wrapper className='predictionPage '>
-        <ImageInpute/>
+      {
+        isloading 
+        ?<Loader type={"bar"} />
+        : <ImageInpute />
+      }
+
+       
+
     </Wrapper>
   )
 }
