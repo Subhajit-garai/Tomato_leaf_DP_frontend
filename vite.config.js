@@ -11,12 +11,7 @@ export default defineConfig({
 
   server: {
     proxy: {
-      '/api': {
-        target:'https://tldp-node-server-0-0-1.onrender.com',
-        changeOrigin:true,
-        secure: false,
-      }
-       
+      '/api':'https://tldp-node-server-0-0-1.onrender.com',
         }
   },
 
